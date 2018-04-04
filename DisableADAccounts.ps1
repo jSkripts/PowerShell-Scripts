@@ -5,7 +5,7 @@
 
 # Script to disable accounts from list
 # Account name must be in from of SamAccountName
-
+# TODO: Create GUI (Not needed but would be nice)
 
 # Paramiters needed for script
 Param (
