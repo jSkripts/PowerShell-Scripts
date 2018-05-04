@@ -12,6 +12,7 @@
 Begin {
     Try { Get-MailboxPermission -Erroraction stop }
 
+
     Catch { 
     Clear-Host; 
     Write-Host "Not connected to Echange Online session" -ForegroundColor Red;
@@ -62,7 +63,7 @@ do {
                 Clear-Host
                 $email = Read-Host "Enter shared mailbox:"
                 $user = Read-Host "Enter username:"
-                Add-RecipientPermission $email -AccessRights SendAs -Trustee $user  -AutoMapping:$false
+                Add-RecipientPermission $email -AccessRights SendAs -Trustee $user  
            } 'q' {
                 Remove-PSSession -ComputerName ps.outlook.com
                 return
