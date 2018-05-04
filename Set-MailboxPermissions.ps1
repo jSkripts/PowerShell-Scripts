@@ -34,7 +34,7 @@ function Show-Menu {
      Write-Host "1: Check user delegation access to shared mailbox."
      Write-Host "2: Remove users 'Full Access' to shared mailbox."
      Write-Host "3: Add 'Full Access' rights to shared mailbox without AutoMapping enabled."
-     Write-Host "4: Add 'Sendas Access' rights to shared mailbox without AutoMapping enabled."
+     Write-Host "4: Add 'Sendas Access' rights to shared mailbox."
      Write-Host "Q: Press 'Q' to quit."
 }
 
