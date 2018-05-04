@@ -33,6 +33,7 @@ function Show-Menu {
      Write-Host "1: Check user delegation access to shared mailbox."
      Write-Host "2: Remove users 'Full Access' to shared mailbox."
      Write-Host "3: Add 'Full Access' rights to shared mailbox without AutoMapping enabled."
+     Write-Host "4: Add 'Sendas Access' rights to shared mailbox without AutoMapping enabled."
      Write-Host "Q: Press 'Q' to quit."
 }
 
@@ -57,6 +58,11 @@ do {
                 $email = Read-Host "Enter shared mailbox:"
                 $user = Read-Host "Enter username:"
                 Add-MailboxPermission -Identity $email -User $user -AccessRights FullAccess -AutoMapping:$false
+            } '4' {
+                Clear-Host
+                $email = Read-Host "Enter shared mailbox:"
+                $user = Read-Host "Enter username:"
+                Add-RecipientPermission $email -AccessRights SendAs -Trustee $user  -AutoMapping:$false
            } 'q' {
                 Remove-PSSession -ComputerName ps.outlook.com
                 return
