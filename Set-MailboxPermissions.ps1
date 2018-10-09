@@ -30,7 +30,6 @@ function Show-Menu {
      )
      Clear-Host
      Write-Host "================ $Title ================"
-     
      Write-Host "1: Check user delegation access to shared mailbox."
      Write-Host "2: Remove users 'Full Access' to shared mailbox."
      Write-Host "3: Add 'Full Access' rights to shared mailbox without AutoMapping enabled."
@@ -71,5 +70,5 @@ do {
      }
      pause
 }
-until ($input -eq 'q') 
+until ($input -eq 'q')
 }

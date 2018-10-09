@@ -1,0 +1,1 @@
+﻿Import-Csv ".\groups.csv" | ForEach-Object { Add-DistributionGroupMember -Identity $_.DistributionGroup -Member $_.Alias }

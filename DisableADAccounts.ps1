@@ -1,5 +1,5 @@
-﻿<# 
-  Created By Joel
+﻿<#
+  Created By Joel Perez
    https://github.com/jSkripts
 #>
 
@@ -14,16 +14,16 @@ Param (
  )
 
 Import-Module ActiveDirectory -ErrorAction SilentlyContinue
- 
+
 $Result = @()
 $DisabledCount = 0
 $AlreadyDisabledCount = 0
 $NotFoundCount = 0
- 
+
 Get-Content $InputFile | ForEach-Object {
     $User = $null
     $User = Get-ADUser $_
-    If ($User) { 
+    If ($User) {
         If ($User.Enabled) {
             $User | Set-ADUser -Enabled $false
             $Result += New-Object PSObject -Property @{
@@ -42,7 +42,7 @@ Get-Content $InputFile | ForEach-Object {
          $AlreadyDisabledCount ++
             }
      }
-    Else { 
+    Else {
    $Result += New-Object PSObject -Property @{
             User = $_
             DN = "N/A"
