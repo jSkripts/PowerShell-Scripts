@@ -1,4 +1,4 @@
-Get-Mailbox  -RecipientTypeDetails SharedMailbox -ResultSize Unlimited | Get-MailboxPermission | Select Identity,User,AccessRights | Export-Csv .\sharedmailboxpermission.csv –NoTypeInformation
+Get-Mailbox  -RecipientTypeDetails SharedMailbox -ResultSize Unlimited | Get-MailboxPermission | Select-Object Identity,User,AccessRights | Export-Csv .\sharedmailboxpermission.csv –NoTypeInformation
 
 Get-Mailbox | Select-Object -Property alias | Out-File Sharedmail.txt
 
